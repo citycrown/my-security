@@ -61,7 +61,7 @@ spring:
       debug: true
 mybatis:
   type-aliases-package: com.my.security.entity
-  mapper-locations: classpath:/mybatis-mappers/*
+  mapper-locations: classpath:/mappers/*
   configuration:
     mapUnderscoreToCamelCase: true
 files:

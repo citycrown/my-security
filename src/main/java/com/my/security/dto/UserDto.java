@@ -1,6 +1,6 @@
 package com.my.security.dto;
 
-import com.my.security.entity.SysUser;
+import com.my.security.entity.SysUserEntity;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @version 1.0.0
  * @date 2019/3/26
  */
-public class UserDto extends SysUser {
+public class UserDto extends SysUserEntity {
 
     private static final long serialVersionUID = -1475985552435131810L;
 

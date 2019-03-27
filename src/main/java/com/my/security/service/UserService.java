@@ -1,7 +1,7 @@
 package com.my.security.service;
 
 import com.my.security.dto.UserDto;
-import com.my.security.entity.SysUser;
+import com.my.security.entity.SysUserEntity;
 
 /**
  * 用户服务接口
@@ -13,7 +13,7 @@ import com.my.security.entity.SysUser;
  */
 public interface UserService {
 
-    SysUser saveUser(UserDto userDto);
+    SysUserEntity saveUser(UserDto userDto);
 
     /*SysUser updateUser(UserDto userDto);
 

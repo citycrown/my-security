@@ -1,13 +1,12 @@
 package com.my.security.service.impl;
 
 import com.my.security.dto.UserDto;
-import com.my.security.entity.SysUser;
-import com.my.security.mapper.master.UserMapper;
+import com.my.security.entity.SysUserEntity;
+import com.my.security.mapper.SysUserMapper;
 import com.my.security.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,17 +23,15 @@ public class UserServiceImpl implements UserService {
     private static final Logger log = LoggerFactory.getLogger("adminLogger");
 
     @Autowired
-    private UserMapper userMapper;
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private SysUserMapper sysUserMapper;
 
     @Override
     @Transactional
-    public SysUser saveUser(UserDto userDto) {
-        SysUser user = userDto;
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+    public SysUserEntity saveUser(UserDto userDto) {
+        SysUserEntity user = userDto;
+        user.setPassword(user.getPassword());
        // user.setStatus(Status.VALID);
-        userMapper.save(user);
+        sysUserMapper.insert(user);
        // saveUserRoles(user.getId(), userDto.getRoleIds());
 
         log.debug("新增用户{}", user.getUsername());
