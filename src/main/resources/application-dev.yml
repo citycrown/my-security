@@ -64,8 +64,6 @@ mybatis:
   mapper-locations: classpath:/mappers/*
   configuration:
     mapUnderscoreToCamelCase: true
-files:
-  path: ${file-path:d:/files}
 logging:
   config: classpath:logback-admin.xml
 log:
