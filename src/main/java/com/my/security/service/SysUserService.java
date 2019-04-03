@@ -11,7 +11,11 @@ import com.my.security.entity.SysUserEntity;
  * @version 1.0.0
  * @date 2019/3/26
  */
-public interface UserService {
+public interface SysUserService {
+
+    SysUserEntity selectById(Integer id);
+
+    SysUserEntity selectByName(String name);
 
     SysUserEntity saveUser(UserDto userDto);
 

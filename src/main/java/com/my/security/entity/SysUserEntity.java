@@ -2,7 +2,7 @@ package com.my.security.entity;
 
 import java.util.Date;
 
-public class SysUserEntity {
+public class SysUserEntity extends BaseEntity<Integer> {
     private Integer id;
 
     private String username;
@@ -23,19 +23,12 @@ public class SysUserEntity {
 
     private Boolean sex;
 
-    private Boolean status;
+    private Integer status;
 
     private Date createtime;
 
     private Date updatetime;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -109,11 +102,11 @@ public class SysUserEntity {
         this.sex = sex;
     }
 
-    public Boolean getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -131,5 +124,11 @@ public class SysUserEntity {
 
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
+    }
+
+    public interface Status {
+        int DISABLED = 0;
+        int VALID = 1;
+        int LOCKED = 2;
     }
 }

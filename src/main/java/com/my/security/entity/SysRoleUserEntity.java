@@ -1,6 +1,6 @@
 package com.my.security.entity;
 
-public class SysRoleUserEntityKey {
+public class SysRoleUserEntity {
     private Integer userid;
 
     private Integer roleid;
