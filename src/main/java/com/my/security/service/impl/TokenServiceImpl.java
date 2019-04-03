@@ -36,7 +36,7 @@ public class TokenServiceImpl implements TokenService {
     @Value("${token.expire.seconds}")
     private Integer expireSeconds;
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String, LoginUser> redisTemplate;
 
     @Override
     public Token saveToken(LoginUser loginUser) {
