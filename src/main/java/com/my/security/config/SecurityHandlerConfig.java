@@ -69,7 +69,7 @@ public class SecurityHandlerConfig {
                                                 AuthenticationException exception) throws IOException, ServletException {
                 String msg = null;
                 if (exception instanceof BadCredentialsException) {
-                    msg = "密码错误";
+                    msg = "账号或者密码错误";
                 } else {
                     msg = exception.getMessage();
                 }
@@ -92,7 +92,7 @@ public class SecurityHandlerConfig {
             @Override
             public void commence(HttpServletRequest request, HttpServletResponse response,
                                  AuthenticationException authException) throws IOException, ServletException {
-                ResponseInfo info = new ResponseInfo(HttpStatus.UNAUTHORIZED.value() + "", "请先登录");
+                ResponseInfo info = new ResponseInfo(HttpStatus.UNAUTHORIZED.value() + "", "嘿，你还没登陆呢！");
                 ResponseUtil.responseJson(response, HttpStatus.UNAUTHORIZED.value(), info);
             }
         };

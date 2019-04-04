@@ -8,7 +8,7 @@
     select * from sys_user WHERE sys_user WHERE id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
-    SELECT * FROM sys_user WHERE name = #{name,jdbcType=INTEGER}
+    SELECT * FROM sys_user WHERE username = #{name,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from sys_user

@@ -53,7 +53,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
         // 添加权限
         List<SysRoleUserEntity> userRoles = sysRoleUserService.listByUserId(user.getId());
         for (SysRoleUserEntity userRole : userRoles) {
-            SysRoleEntity role = sysRoleService.selectById(userRole.getRoleid());
+            SysRoleEntity role = sysRoleService.selectById(userRole.getRoleId());
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 
