@@ -35,4 +35,10 @@ public class UserController {
         return sysUserMapper.selectByPrimaryKey(id);
     }
 
+    @ApiOperation(value = "当前登陆用户")
+    @GetMapping("/currentUser")
+    public SysUserEntity currentUser() {
+        return null;
+    }
+
 }

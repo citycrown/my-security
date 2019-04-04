@@ -3,7 +3,7 @@ package com.my.security.service.impl;
 import com.my.security.dto.UserDto;
 import com.my.security.entity.SysUserEntity;
 import com.my.security.mapper.SysUserMapper;
-import com.my.security.service.UserService;
+import com.my.security.service.SysUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +18,22 @@ import org.springframework.transaction.annotation.Transactional;
  * @version 1.0.0
  * @date 2019/3/26
  */
-@Service
-public class UserServiceImpl implements UserService {
+@Service("UserService")
+public class SysUserServiceImpl implements SysUserService {
     private static final Logger log = LoggerFactory.getLogger("adminLogger");
 
     @Autowired
     private SysUserMapper sysUserMapper;
+
+    @Override
+    public SysUserEntity selectById(Integer id) {
+        return sysUserMapper.selectById(id);
+    }
+
+    @Override
+    public SysUserEntity selectByName(String name) {
+        return sysUserMapper.selectByName(name);
+    }
 
     @Override
     @Transactional
