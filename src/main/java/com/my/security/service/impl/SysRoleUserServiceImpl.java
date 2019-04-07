@@ -23,7 +23,7 @@ public class SysRoleUserServiceImpl implements SysRoleUserService {
     SysRoleUserMapper sysRoleUserMapper;
 
     @Override
-    public List<SysRoleUserEntity> listByUserId(Integer userId) {
+    public List<SysRoleUserEntity> listByUserId(Long userId) {
         return sysRoleUserMapper.listByUserId(userId);
     }
 }

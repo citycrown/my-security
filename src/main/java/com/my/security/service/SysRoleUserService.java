@@ -13,5 +13,5 @@ import java.util.List;
  * @date 2019/4/3
  */
 public interface SysRoleUserService {
-    List<SysRoleUserEntity> listByUserId(Integer userId);
+    List<SysRoleUserEntity> listByUserId(Long userId);
 }

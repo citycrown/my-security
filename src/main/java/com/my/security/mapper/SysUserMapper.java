@@ -2,6 +2,7 @@ package com.my.security.mapper;
 
 import com.my.security.entity.SysUserEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -18,7 +19,7 @@ public interface SysUserMapper {
      * @version: 1.0.0
      * @date: 2019/4/3 14:27
      */
-    SysUserEntity selectById(Integer id);
+    SysUserEntity selectById(Long id);
 
     /**
      * 根据用户名查询
@@ -30,9 +31,10 @@ public interface SysUserMapper {
      * @version: 1.0.0
      * @date: 2019/4/3 14:29
      */
+    @Select("select * from sys_user t where t.username = #{username}")
     SysUserEntity selectByName(String name);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(SysUserEntity record);
 

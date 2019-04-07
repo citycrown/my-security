@@ -1,33 +1,25 @@
 package com.my.security.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
-public class SysUserEntity extends BaseEntity<Integer> {
-    private Integer id;
+public class SysUserEntity extends BaseEntity<Long> {
+
+    private static final long serialVersionUID = -6525908145032868837L;
 
     private String username;
-
     private String password;
-
     private String nickname;
-
-    private String headimgurl;
-
+    private String headImgUrl;
     private String phone;
-
     private String telephone;
-
     private String email;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
-
-    private Boolean sex;
-
+    private Integer sex;
     private Integer status;
-
-    private Date createtime;
-
-    private Date updatetime;
+    private String intro;
 
 
     public String getUsername() {
@@ -55,11 +47,11 @@ public class SysUserEntity extends BaseEntity<Integer> {
     }
 
     public String getHeadimgurl() {
-        return headimgurl;
+        return headImgUrl;
     }
 
     public void setHeadimgurl(String headimgurl) {
-        this.headimgurl = headimgurl == null ? null : headimgurl.trim();
+        this.headImgUrl = headimgurl == null ? null : headimgurl.trim();
     }
 
     public String getPhone() {
@@ -94,11 +86,11 @@ public class SysUserEntity extends BaseEntity<Integer> {
         this.birthday = birthday;
     }
 
-    public Boolean getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(Boolean sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
@@ -110,20 +102,12 @@ public class SysUserEntity extends BaseEntity<Integer> {
         this.status = status;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public String getIntro() {
+        return intro;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
-
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setIntro(String intro) {
+        this.intro = intro;
     }
 
     public interface Status {

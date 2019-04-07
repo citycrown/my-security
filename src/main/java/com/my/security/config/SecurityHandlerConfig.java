@@ -67,6 +67,7 @@ public class SecurityHandlerConfig {
             @Override
             public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
                                                 AuthenticationException exception) throws IOException, ServletException {
+                System.out.println(request.getParameterValues("password").toString());
                 String msg = null;
                 if (exception instanceof BadCredentialsException) {
                     msg = "账号或者密码错误";

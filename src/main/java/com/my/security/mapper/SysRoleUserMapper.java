@@ -17,5 +17,5 @@ import java.util.List;
 @Mapper
 public interface SysRoleUserMapper {
     @Select("SELECT * FROM sys_role_user WHERE userId = #{userId}")
-    List<SysRoleUserEntity> listByUserId(Integer userId);
+    List<SysRoleUserEntity> listByUserId(Long userId);
 }

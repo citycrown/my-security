@@ -13,7 +13,7 @@ import com.my.security.entity.SysUserEntity;
  */
 public interface SysUserService {
 
-    SysUserEntity selectById(Integer id);
+    SysUserEntity selectById(Long id);
 
     SysUserEntity selectByName(String name);
 

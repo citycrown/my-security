@@ -26,7 +26,7 @@ public class SysUserServiceImpl implements SysUserService {
     private SysUserMapper sysUserMapper;
 
     @Override
-    public SysUserEntity selectById(Integer id) {
+    public SysUserEntity selectById(Long id) {
         return sysUserMapper.selectById(id);
     }
 
