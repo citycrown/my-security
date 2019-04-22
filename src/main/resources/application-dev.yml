@@ -34,7 +34,7 @@ spring:
     servlet:
       load-on-startup: 1
   redis:
-    host: 127.0.0.1
+    host: 192.168.148.161
     port: 6380
     timeout: 10s
     lettuce:
